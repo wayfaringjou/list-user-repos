@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List User's Repos</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <title>List User's Repos</title>
+  </head>
+  <body>
+    <header>
+      <h1>List User's repos.</h1>
+    </header>
+    <main>
+      <section>
+        <form action="" class="js-user-input-form">
+          <fieldset>
+            <legend>Input a username.</legend>
+            <label for="userinput">Username:</label>
+            <input
+              type="text"
+              name="user-input"
+              id="user-input"
+              placeholder="username"
+            />
+            <label for="sort-type">Sort by:</label>
+            <select name="sort-type" id="sort-type">
+              <option value="created">created</option>
+              <option value="updated">updated</option>
+              <option value="pushed">pushed</option>
+              <option value="full_name">full name</option>
+            </select>
+            <label for="direction">Direction:</label>
+            <select name="direction" id="direction">
+              <option value="asc">asc</option>
+              <option value="desc">desc</option>
+            </select>
+
+            <button type="submit" class="js-form-submit">Search</button>
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <h3 id="js-error"></h3>
+      </section>
+      <section class="js-results hidden">
+        <h2>Results</h2>
+        <ul id="js-results-list"></ul>
+
+      </section>
+    </main>
+  </body>
+  <script src="app.js"></script>
 </html>
